@@ -515,34 +515,9 @@ p {
 }
 
 .phone-app img {
-    width: 350px;
+    width: 700px;
     height: auto;
     filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.15));
-}
-
-/* Scroll Images Container */
-.scroll-images {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 300px;
-}
-
-.scroll-item {
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.scroll-item:hover {
-    transform: translateY(-4px);
-}
-
-.scroll-item img {
-    width: 100%;
-    height: auto;
-    display: block;
 }
 
 /* Responsive Hero Section */
@@ -552,12 +527,7 @@ p {
     }
 
     .phone-app img {
-        width: 300px;
-    }
-
-    .scroll-images {
-        max-width: 250px;
-        gap: 12px;
+        width: 500px;
     }
 }
 
@@ -581,17 +551,11 @@ p {
     }
 
     .hero-visual {
-        flex-direction: row;
-        gap: 24px;
         justify-content: center;
     }
 
     .phone-app img {
-        width: 250px;
-    }
-
-    .scroll-images {
-        max-width: 200px;
+        width: 400px;
     }
 }
 
@@ -609,28 +573,115 @@ p {
         height: 45px;
     }
 
-    .hero-visual {
-        flex-direction: column;
-    }
-
     .phone-app img {
-        width: 200px;
-    }
-
-    .scroll-images {
-        flex-direction: row;
-        max-width: 100%;
-        gap: 12px;
-    }
-
-    .scroll-item {
-        flex: 1;
+        width: 280px;
     }
 }
 
-/* Section 2 Styles */
-#section-2 {
-    /* Section 2 styles will be added */
+/* Section 2: Training Programs */
+.training-section {
+    background: linear-gradient(180deg, #ffffff 0%, #f8f7ff 100%);
+    padding: 100px 0;
+}
+
+.training-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.training-image {
+    width: 100%;
+}
+
+.training-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.training-phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.training-phone img {
+    width: 350px;
+    height: auto;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.15));
+}
+
+.training-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.training-title {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-black);
+    margin-bottom: 16px;
+}
+
+.training-description {
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-light);
+}
+
+/* Responsive Training Section */
+@media screen and (max-width: 1024px) {
+    .training-section {
+        padding: 80px 0;
+    }
+
+    .training-content {
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .training-phone img {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .training-section {
+        padding: 60px 0;
+    }
+
+    .training-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .training-phone img {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .training-section {
+        padding: 40px 0;
+    }
+
+    .training-content {
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .training-phone img {
+        width: 240px;
+    }
+
+    .training-text {
+        text-align: left;
+    }
 }
 
 /* Footer Styles */
