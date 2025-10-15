@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "@automatalabs/mcp-server-chrome"],
+      "description": "Chrome DevTools MCP server for inspecting and interacting with Chrome browser"
+    }
+  }
+}
