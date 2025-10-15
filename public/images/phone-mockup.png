@@ -1,0 +1,7 @@
+<svg width="300" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="600" fill="#1a1a1a" rx="40"/>
+  <rect x="20" y="50" width="260" height="500" fill="#FFFFFF" rx="20"/>
+  <rect x="120" y="20" width="60" height="15" fill="#2a2a2a" rx="7"/>
+  <text x="150" y="300" font-family="Arial" font-size="20" fill="#825ef6" text-anchor="middle" font-weight="bold">JSA</text>
+  <text x="150" y="325" font-family="Arial" font-size="14" fill="#666666" text-anchor="middle">App Interface</text>
+</svg>

@@ -10,3 +10,4 @@ bucket = "./public"
 [[rules]]
 type = "Text"
 globs = ["**/*.css", "**/*.html"]
+fallthrough = true
