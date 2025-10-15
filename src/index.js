@@ -4,6 +4,7 @@
 
 import html from './template.html';
 import css from '../public/css/styles.css';
+import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
 
 // Import JS as raw text to avoid execution in Worker context
 const mainJs = `/**
@@ -63,12 +64,22 @@ export default {
       });
     }
 
-    // Serve images - delegate to ASSETS if available
+    // Serve images from KV static content
     if (path.startsWith('/images/')) {
-      if (env.ASSETS) {
-        return env.ASSETS.fetch(request);
+      try {
+        return await getAssetFromKV(
+          {
+            request,
+            waitUntil: ctx.waitUntil.bind(ctx),
+          },
+          {
+            ASSET_NAMESPACE: env.__STATIC_CONTENT,
+            ASSET_MANIFEST: {},
+          }
+        );
+      } catch (e) {
+        return new Response(`Image not found: ${path}`, { status: 404 });
       }
-      return new Response('Image not found', { status: 404 });
     }
 
     // Serve main HTML for all other routes

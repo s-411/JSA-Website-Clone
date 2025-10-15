@@ -508,78 +508,41 @@ p {
     gap: 32px;
 }
 
-.phone-mockup {
+/* Phone App Image */
+.phone-app {
     flex-shrink: 0;
     z-index: 2;
-    width: 300px;
-    height: 600px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    border-radius: 40px;
-    padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    position: relative;
 }
 
-.phone-mockup::before {
-    content: "";
-    position: absolute;
-    top: 50px;
-    left: 20px;
-    right: 20px;
-    bottom: 50px;
-    background: #ffffff;
-    border-radius: 20px;
+.phone-app img {
+    width: 350px;
+    height: auto;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.15));
 }
 
-.phone-mockup::after {
-    content: "📱 JSA App";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    font-weight: bold;
-    color: #825ef6;
-    z-index: 1;
+/* Scroll Images Container */
+.scroll-images {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 300px;
 }
 
-.phone-mockup img {
+.scroll-item {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.scroll-item:hover {
+    transform: translateY(-4px);
+}
+
+.scroll-item img {
     width: 100%;
     height: auto;
-    display: none; /* Hide broken image */
-}
-
-/* Photo Grid */
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    max-width: 350px;
-}
-
-.photo-item {
-    aspect-ratio: 1;
-    border-radius: 12px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #e0d5f7 0%, #f3f0ff 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.photo-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none; /* Hide broken images for now */
-}
-
-/* Show placeholder emoji instead */
-.photo-item::after {
-    content: "📸";
-    font-size: 32px;
-    opacity: 0.3;
+    display: block;
 }
 
 /* Responsive Hero Section */
@@ -588,13 +551,13 @@ p {
         gap: 40px;
     }
 
-    .phone-mockup img {
-        width: 250px;
+    .phone-app img {
+        width: 300px;
     }
 
-    .photo-grid {
-        max-width: 300px;
-        gap: 10px;
+    .scroll-images {
+        max-width: 250px;
+        gap: 12px;
     }
 }
 
@@ -618,17 +581,17 @@ p {
     }
 
     .hero-visual {
-        flex-direction: column;
+        flex-direction: row;
         gap: 24px;
+        justify-content: center;
     }
 
-    .phone-mockup img {
-        width: 220px;
+    .phone-app img {
+        width: 250px;
     }
 
-    .photo-grid {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 100%;
+    .scroll-images {
+        max-width: 200px;
     }
 }
 
@@ -646,9 +609,22 @@ p {
         height: 45px;
     }
 
-    .photo-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
+    .hero-visual {
+        flex-direction: column;
+    }
+
+    .phone-app img {
+        width: 200px;
+    }
+
+    .scroll-images {
+        flex-direction: row;
+        max-width: 100%;
+        gap: 12px;
+    }
+
+    .scroll-item {
+        flex: 1;
     }
 }
 
